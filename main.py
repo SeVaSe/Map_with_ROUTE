@@ -93,14 +93,14 @@ def draw_route(a, b):
     # Импорт изображения и отображение его на графике
     img1 = imread('floor_kip_1.jpg')
 
-    plt.imshow(img1, extent=[10, 60, 10, 60], alpha=1)
+    plt.imshow(img1, extent=[0, 50, 0, 50], alpha=1)
 
     # Построение маршрута от точки А до точки Б
     path = nx.shortest_path(G, source=a, target=b)
 
     # Отображение точек и маршрута + размер точек и текста этих точек
     pos = nx.get_node_attributes(G, 'pos')
-    nx.draw(G, pos, with_labels=True, node_size=50, font_size=7)
+    nx.draw(G, pos, with_labels=True, node_size=50, font_size=10)
     plt.plot([pos[node][0] for node in path],
              [pos[node][1] for node in path],
              color='r', linewidth=1)
