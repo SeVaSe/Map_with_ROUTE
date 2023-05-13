@@ -107,18 +107,21 @@ def draw_route(a, b):
 
     plt.show()
 
+
+
+
+def stop_prog():
     # проверка на флаг
     flag_quest = input("Закончить ? yes или no: ")
     if flag_quest == "yes":
-        flag = False
         print("программа закончена")
-
-
+        return False
+    else:
+        return True
 
 
 
 flag = True
-
 while flag:
     print("""Доступные точки для: 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'q', 'r', 'w', 't', 'y',
                      'u', 'i', 'o', 'p', 's', 'h', 'j', 'k', 'l', 'z', 'x', 'v',
@@ -129,3 +132,4 @@ while flag:
     b = input("Введите точку финиша: ")
 
     draw_route(a, b)
+    flag = stop_prog()
